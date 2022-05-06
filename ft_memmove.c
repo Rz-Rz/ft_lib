@@ -5,21 +5,21 @@
 	size_t i;                                
 
 	if (!dest && !src)
-		return (NULL);
+			return (NULL);
 
-          i = 0;                                
-          if (dest > src) {                                
-                  while(n) {
-			  ((unsigned char*)dest)[n] = ((unsigned char)src)[n];
-			  n--;                                
-                  }                                
-          }                                
-          else {                                
-                  while (i < n)                                
-                  {                                
-                          ((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-                          i++;                                
-                  }                                
-          }                                
-          return (dest);
+	i = 0;                                
+	if (dest > src) {                                
+			while(n) {
+					((unsigned char*)dest)[n] = ((unsigned char *)src)[n];
+					n--;                                
+			}                                
+	}                                
+	else {                                
+			while (i < n)                                
+			{                                
+					((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+					i++;                                
+			}                                
+	}                                
+	return (dest);
 }
