@@ -1,17 +1,22 @@
 SRC = $(wildcard *.c) #equivalent de *.c
 OBJ = $(SRC:.c=.o) #comme source, mais on remplace les .c par des .o
 CC = gcc -Wall -Wextra -Werror
+NAME = libft.a
 
 
-all: libft.a 
+all: $(NAME)
 
-libft.a : $(OBJ)
-	ar -cvq libft.a $(OBJ)
+
+$(NAME) : $(OBJ)
+	ar -cvq $(NAME) $(OBJ)
+
 %.o : %.c 
-	$(CC) -o $@ -c $< #fait reference a %.o et fait reference a la premiere dependance
-
+	$(CC) -o $@ -c $< 
 
 clean:
 	rm $(OBJ)
 
+fclean: clean
+	rm $(NAME)
 
+re: fclean all
