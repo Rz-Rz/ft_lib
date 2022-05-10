@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:25:11 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/10 12:25:59 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/10 15:40:01 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char	*strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (*little == NULL)
-		return (big);
+	if (little == NULL)
+		return ((char *)big);
 	i = 0;
 	while (big[i])
 	{

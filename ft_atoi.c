@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:27:40 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/10 14:29:38 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/10 15:40:52 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	atoi(const char *nptr)
 
 	nb = 0;
 	neg = 0;
-	while ((*str >= 9 && *str <= 13) || (*str == ' '))
-		str++;
-	if (*str == '-' || *str == '+')
-		if (*str++ == '-')
+	while ((*nptr >= 9 && *nptr <= 13) || (*nptr == ' '))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
+		if (*nptr++ == '-')
 			neg++;
-	while (*str >= '0' && *str <= '9')
-		nb = nb * 10 + *str++ - '0';
+	while (*nptr >= '0' && *nptr <= '9')
+		nb = nb * 10 + *nptr++ - '0';
 	if (neg)
 		nb *= -1;
 	return (nb);
