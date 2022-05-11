@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 15:40:29 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/10 16:43:09 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/11 11:59:44 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	if (!src || !dst)
 		return (0);
+	if (size == 0)
+		return (ft_strlen(src));
 	i = 0;
 	srcsize = ft_strlen(src);
 	while (i < size - 1 && src[i])

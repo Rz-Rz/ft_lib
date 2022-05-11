@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 12:25:11 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/10 16:43:32 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/11 12:38:40 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (big[i + j] == little[j] && (i + j) < len)
 		{
 			if (big[i + j] == '\0' && little[j] == '\0')
-				return ((char *)&big[i + j]);
+				return ((char *)&big[i]);
 					j++;
 		}
 		if (little[j] == '\0')
-			return ((char *)&big[i + j]);
-				i++;
+			return ((char *)&big[i]);
+		i++;
 	}
 	return (NULL);
 }
