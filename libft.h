@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
@@ -66,5 +65,13 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_atoi(const char *nptr);
 
 void	*ft_calloc(size_t nmemb, size_t size);
+
+// Non Standard Function
+char *ft_substr(char const *s, unsigned int start, size_t len);
+
+char *ft_strjoin(char const *s1, char const *s2);
+
+
+
 
 #endif
