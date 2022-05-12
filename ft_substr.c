@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:14:47 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/12 13:44:40 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/12 15:09:30 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	if (ft_strlen(s) < start)
-		return (NULL);
+		return (ft_strdup(""));
 	ptr = malloc(sizeof(char) * len + 1);
 	if (!ptr)
 		return (NULL);
