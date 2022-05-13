@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 15:15:06 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/12 16:39:13 by kdhrif           ###   ########.fr       */
+/*   Created: 2022/05/13 13:00:19 by kdhrif            #+#    #+#             */
+/*   Updated: 2022/05/13 13:00:23 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	j = ft_strlen(s1) - 1;
 	while (ft_incharset(set, s1[j]))
+<<<<<<< HEAD
 		j--;
+=======
+		--j;
+>>>>>>> 8cdc688b6365a500255ed50c81bd9a2d74badf64
 	str = malloc(sizeof(char) * (j - i + 2));
 	if (!str)
 		return (NULL);
 	k = 0;
-	while (k < (j - i) + 2)
+	while (k < (j - i + 1))
 	{
 		str[k] = s1[i + k];
 		k++;
