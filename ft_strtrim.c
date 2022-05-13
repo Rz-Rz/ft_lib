@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int ft_incharset(const char* set, char c)
+int	ft_incharset(const char *set, char c)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (set[++i])
@@ -23,12 +23,12 @@ int ft_incharset(const char* set, char c)
 	return (0);
 }
 
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int j;
-	int k;
-	char *str;
+	int		i;
+	int		j;
+	int		k;
+	char	*str;
 
 	i = 0;
 	j = 0;
