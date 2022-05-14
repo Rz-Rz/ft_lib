@@ -1,12 +1,12 @@
-
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 13:00:19 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/13 13:00:23 by kdhrif           ###   ########.fr       */
+/*   Created: 2022/05/14 22:03:22 by kdhrif            #+#    #+#             */
+/*   Updated: 2022/05/14 22:03:28 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	j = ft_strlen(s1) - 1;
 	while (ft_incharset(set, s1[j]))
-<<<<<<< HEAD
-		j--;
-=======
 		--j;
->>>>>>> 8cdc688b6365a500255ed50c81bd9a2d74badf64
 	str = malloc(sizeof(char) * (j - i + 2));
 	if (!str)
 		return (NULL);
