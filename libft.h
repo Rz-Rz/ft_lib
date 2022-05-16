@@ -1,9 +1,15 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:42:04 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/10 16:51:41 by kdhrif           ###   ########.fr       */
+/*   Created: 2022/05/13 18:18:11 by kdhrif            #+#    #+#             */
+/*   Updated: 2022/05/13 18:18:14 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -63,13 +69,12 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 // Non Standard Function
-char *ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-char *ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 
-char *ft_strtrim(char const *s1, char const *set);
+char	*ft_strtrim(char const *s1, char const *set);
 
-
-
+char	**ft_split(char const *s, char c);
 
 #endif
