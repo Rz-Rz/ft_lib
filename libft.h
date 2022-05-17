@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:18:11 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/13 18:18:14 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/17 17:06:07 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+
+// Define
+#define INT_MAX 2147483647
+#define INT_MIN -2147483648
+
 
 //Functions from ctype.h library
 int		ft_isalnum(int c);
@@ -76,5 +81,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 char	**ft_split(char const *s, char c);
+
+char	*ft_itoa(int n);
 
 #endif
