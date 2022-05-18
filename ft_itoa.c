@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:27:17 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/17 18:08:48 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/18 12:35:36 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ char	*ft_itoa(int n)
 		return (ft_strcpy("-2147483648"));
 	neg = (n < 0);
 	len = ft_intlen(n);
+	printf("%d\n", len);
 	s = malloc(sizeof(char) * (len + 1 + neg));
 	if (!s)
 		return (NULL);
@@ -79,7 +80,7 @@ char	*ft_itoa(int n)
 	while (++i < len && n)
 	{
 		s[i] = n % 10 + '0';
-		printf("%c", s[i]);
+		printf("%d", s[i]);
 		n /= 10;
 	}
 	if (neg)
@@ -95,10 +96,10 @@ int	main(void)
 
 	/* n = -99999; */
 	/* printf("%s\n", ft_itoa(n)); */
-	printf("\n%s\n", ft_itoa(-123));
+	printf("\n%s\n", ft_itoa(0));
 	/* printf("%s\n", ft_itoa(-1)); */
 	/* printf("%s\n", ft_itoa(-9872349)); */
-	printf("\n%s\n", ft_itoa(INT_MAX));
+	/* printf("\n%s\n", ft_itoa(INT_MAX)); */
 	/* printf("%s\n", ft_itoa(INT_MIN)); */
 	/* printf("\n%s\n", ft_itoa(6666)); */
 	/* printf("\n%s\n", ft_itoa(12345)); */
