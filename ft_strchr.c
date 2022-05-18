@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 11:55:28 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/11 12:20:12 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/13 17:03:48 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ char	*ft_strchr(const char *s, int c)
 
 	i = -1;
 	while (s[++i])
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			return ((char *)s + i);
-	if (s[i] == c)
+	if (s[i] == (char)c)
 		return ((char *)s + i);
 	return (0);
 }

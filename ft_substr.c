@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/12 14:00:02 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/12 14:00:05 by kdhrif           ###   ########.fr       */
+/*   Created: 2022/05/11 18:14:47 by kdhrif            #+#    #+#             */
+/*   Updated: 2022/05/17 16:53:21 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+int	ft_abs(int n)
 {
-	size_t	i;
-	size_t	j;
-	size_t	k;
-	char	*ptr;
+	if (n < 0)
+		return (-n);
+	else
+		return (n);
+}
 
-	i = ft_strlen(s1);
-	j = ft_strlen(s2);
-	ptr = malloc(sizeof(char) * (i + j + 1));
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char	*ptr;
+	size_t	i;
+	size_t	slen;
+
+	slen = ft_strlen(s);
+	if (slen < (size_t)start || !s)
+		return (ft_strdup(""));
+	if (len > slen)
+		ptr = malloc(sizeof(char) * (ft_abs(start - len) + 1));
+	else
+		ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	k = 0;
-	while (k < i)
+	i = 0;
+	while (i < len && s[start + i])
 	{
-		ptr[k] = s1[k];
-		k++;
+		ptr[i] = s[start + i];
+		i++;
 	}
-	k = 0;
-	while (k < j)
-	{
-		ptr[i + k] = s2[k];
-		k++;
-	}
-	ptr[i + j] = '\0';
+	ptr[i] = '\0';
 	return (ptr);
 }

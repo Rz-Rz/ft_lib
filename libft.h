@@ -1,18 +1,24 @@
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 15:42:04 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/10 16:51:41 by kdhrif           ###   ########.fr       */
+/*   Created: 2022/05/13 18:18:11 by kdhrif            #+#    #+#             */
+/*   Updated: 2022/05/18 17:40:06 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
 # include <stdlib.h>
 # include <unistd.h>
+
+// Define
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 //Functions from ctype.h library
 int		ft_isalnum(int c);
@@ -67,11 +73,18 @@ int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
 
 // Non Standard Function
-char *ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-char *ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char const *s1, char const *s2);
 
+char	*ft_strtrim(char const *s1, char const *set);
 
+char	**ft_split(char const *s, char c);
 
+char	*ft_itoa(int n);
+
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+void ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif
