@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:27:17 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/18 15:59:03 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/19 12:44:09 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	neg = (n < 0);
-	str = calloc(11 + neg, sizeof(*str));
+	str = ft_calloc(11 + neg, sizeof(*str));
 	if (!str)
 		return (NULL);
 	len = 0;
