@@ -6,102 +6,57 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:27:17 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/18 12:35:36 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/18 15:59:03 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	ft_intlen(int n)
+int	ft_abs(int nbr)
 {
-	int	i;
-
-	i = 0;
-	if (n == 0)
-		return (1);
-	while (n)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
+	if (nbr < 0)
+		return (-nbr);
+	else
+		return (nbr);
 }
 
-void	ft_strrev(char *s, int len)
+void	ft_strrev(char *str)
 {
-	int		i;
-	char	temp;
+	size_t	len;
+	size_t	i;
+	char	tmp;
 
+	len = ft_strlen(str);
 	i = 0;
 	while (i < len / 2)
 	{
-		temp = s[i];
-		s[i] = s[len - (i + 1)];
-		s[len - (i + 1)] = temp;
+		tmp = str[i];
+		str[i] = str[len - i - 1];
+		str[len - i - 1] = tmp;
 		i++;
 	}
-}
-
-char	*ft_strcpy(const char *src)
-{
-	size_t	i;
-	char *dst;
-
-	i = 0;
-	dst = malloc(sizeof(char) * (11 + 1));
-	while (src[i])
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	dst[i] = '\0';
-	return (dst);
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	int		i;
+	char	*str;
 	int		neg;
-	char	*s;
+	size_t	len;
 
-	if (n == INT_MIN)
-		return (ft_strcpy("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
 	neg = (n < 0);
-	len = ft_intlen(n);
-	printf("%d\n", len);
-	s = malloc(sizeof(char) * (len + 1 + neg));
-	if (!s)
+	str = calloc(11 + neg, sizeof(*str));
+	if (!str)
 		return (NULL);
-	if (neg && ++len)
-		n *= -1;
-	i = -1;
-	while (++i < len && n)
+	len = 0;
+	while (n)
 	{
-		s[i] = n % 10 + '0';
-		printf("%d", s[i]);
+		str[len++] = '0' + ft_abs(n % 10);
 		n /= 10;
 	}
 	if (neg)
-		s[i++] = '-';
-	ft_strrev(s, len);
-	s[i] = '\0';
-	return (s);
-}
-
-int	main(void)
-{
-	/* int	n; */
-
-	/* n = -99999; */
-	/* printf("%s\n", ft_itoa(n)); */
-	printf("\n%s\n", ft_itoa(0));
-	/* printf("%s\n", ft_itoa(-1)); */
-	/* printf("%s\n", ft_itoa(-9872349)); */
-	/* printf("\n%s\n", ft_itoa(INT_MAX)); */
-	/* printf("%s\n", ft_itoa(INT_MIN)); */
-	/* printf("\n%s\n", ft_itoa(6666)); */
-	/* printf("\n%s\n", ft_itoa(12345)); */
-	return (0);
+		str[len] = '-';
+	ft_strrev(str);
+	return (str);
 }
