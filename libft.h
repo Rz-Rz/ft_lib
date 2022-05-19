@@ -20,6 +20,13 @@
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
+// Struct
+typedef struct s_list
+{
+		void *content;
+		struct s_list *next;
+} t_list;
+
 //Functions from ctype.h library
 int		ft_isalnum(int c);
 
