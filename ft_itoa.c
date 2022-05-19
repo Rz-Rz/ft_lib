@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:27:17 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/19 12:44:09 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/19 16:19:48 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,21 @@ void	ft_strrev(char *str)
 	}
 }
 
+int	ft_intlen(int n)
+{
+	int	i;
+
+	if (n == 0)
+		return (1);
+	i = 0;
+	while (n)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -46,7 +61,7 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	neg = (n < 0);
-	str = ft_calloc(11 + neg, sizeof(*str));
+	str = ft_calloc(ft_intlen(n) + 1 + neg, sizeof(*str));
 	if (!str)
 		return (NULL);
 	len = 0;

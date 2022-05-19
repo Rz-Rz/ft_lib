@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:19:24 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/18 17:30:02 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/19 16:10:59 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*str;
 	size_t	i;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
