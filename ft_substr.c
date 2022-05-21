@@ -6,19 +6,11 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:14:47 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/19 16:12:18 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/21 12:15:49 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	else
-		return (n);
-}
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

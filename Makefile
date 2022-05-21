@@ -6,7 +6,7 @@
 #    By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 15:38:18 by kdhrif            #+#    #+#              #
-#    Updated: 2022/05/19 15:13:16 by kdhrif           ###   ########.fr        #
+#    Updated: 2022/05/21 15:33:59 by kdhrif           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 				ft_strnstr.c ft_tolower.c ft_bzero.c   ft_isascii.c ft_memccpy.c \
 				ft_memmove.c ft_putnbr_fd.c  ft_strdup.c  ft_strlen.c  ft_strrchr.c \
 				ft_toupper.c ft_calloc.c  ft_isdigit.c ft_memchr.c  ft_memset.c  \
-				ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c
+				ft_putstr_fd.c  ft_strjoin.c ft_strmapi.c ft_strtrim.c ft_striteri.c
 BONUS_OBJ = $(BONUS:.c=.o)
 OBJ = $(SRCS:.c=.o)
 
@@ -41,3 +41,7 @@ fclean: clean
 
 bonus: $(OBJ) $(BONUS_OBJ)
 	ar -cvq $(NAME) $(OBJ) $(BONUS_OBJ)
+# so:
+# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+# 	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
+.PHONY: re all clean fclean bonus
