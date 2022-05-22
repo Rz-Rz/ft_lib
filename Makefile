@@ -6,11 +6,11 @@
 #    By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 15:38:18 by kdhrif            #+#    #+#              #
-#    Updated: 2022/05/21 15:33:59 by kdhrif           ###   ########.fr        #
+#    Updated: 2022/05/22 14:55:08 by kdhrif           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+LIBFT = libft.a
 
 CC = gcc -Wall -Wextra -Werror
 BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
@@ -26,22 +26,23 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c  ft_putchar_fd.c ft_split.c \
 BONUS_OBJ = $(BONUS:.c=.o)
 OBJ = $(SRCS:.c=.o)
 
+all: $(LIBFT)
+
 re: fclean all
 
-all: $(NAME)
+$(LIBFT) : $(OBJ)
+	ar rcs $@ $^
 
-$(NAME) : $(OBJ)
-	ar -cvq $(NAME) $(OBJ)
+bonus: $(LIBFT) $(BONUS_OBJ)
+	ar rcs $(LIBFT) $(BONUS_OBJ)
+
+%.o:%.c
+	$(CC) -c $< -o $@ 
 
 clean:
 	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(LIBFT)
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	ar -cvq $(NAME) $(OBJ) $(BONUS_OBJ)
-# so:
-# 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
-# 	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
 .PHONY: re all clean fclean bonus
