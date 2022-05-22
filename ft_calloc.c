@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 14:49:10 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/13 15:22:23 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/22 16:07:03 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 			return (NULL);
 		return (ptr);
 	}
-	if (((nmemb * size) / nmemb) != nmemb)
+	if (((nmemb * size) / size) != nmemb)
 		return (NULL);
 	ptr = (void *)malloc(nmemb * size);
 	if (!ptr)

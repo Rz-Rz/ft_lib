@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:06:21 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/13 13:07:33 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/22 16:02:43 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		k;
 
+	if (!s)
+		return (NULL);
 	wrds = ft_cntwrds(s, c);
 	strings = malloc(sizeof(char *) * (wrds + 1));
 	if (!strings)
