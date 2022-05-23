@@ -6,7 +6,7 @@
 #    By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 15:38:18 by kdhrif            #+#    #+#              #
-#    Updated: 2022/05/22 15:49:55 by kdhrif           ###   ########.fr        #
+#    Updated: 2022/05/23 10:15:52 by kdhrif           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,10 @@ clean:
 
 fclean: clean
 	rm -f $(LIBFT)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BONUS_OBJ)
 
 .PHONY: re all clean fclean bonus
 

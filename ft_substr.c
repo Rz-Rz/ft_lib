@@ -6,7 +6,7 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:14:47 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/21 12:15:49 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/23 10:32:38 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
 		return (NULL);
-	i = 0;
-	while (i < len && s[start + i])
-	{
+	i = -1;
+	while (++i < len && s[start + i])
 		ptr[i] = s[start + i];
-		i++;
-	}
 	ptr[i] = '\0';
 	return (ptr);
 }

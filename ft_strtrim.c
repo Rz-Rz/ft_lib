@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:03:22 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/14 22:03:28 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/23 10:31:01 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		k;
 	char	*str;
 
+	if (!s1 || !set)
+		return (NULL);
 	i = 0;
 	j = 0;
 	while (ft_incharset(set, s1[i]))
@@ -42,12 +44,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str = malloc(sizeof(char) * (j - i + 2));
 	if (!str)
 		return (NULL);
-	k = 0;
-	while (k < (j - i + 1))
-	{
+	k = -1;
+	while (++k < (j - i + 1))
 		str[k] = s1[i + k];
-		k++;
-	}
 	str[k] = '\0';
 	return (str);
 }
