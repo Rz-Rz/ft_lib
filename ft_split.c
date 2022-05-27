@@ -6,13 +6,13 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:06:21 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/22 16:02:43 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/27 10:21:12 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_cntwrds(char const *s, char c)
+static int	ft_cntwrds(char const *s, char c)
 {
 	int	i;
 	int	words;
@@ -31,7 +31,7 @@ int	ft_cntwrds(char const *s, char c)
 	return (words);
 }
 
-char	*ft_strdupm(char *s, char c)
+static char	*ft_strdupm(char *s, char c)
 {
 	int		i;
 	int		d;

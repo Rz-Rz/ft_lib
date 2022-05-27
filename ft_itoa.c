@@ -6,13 +6,13 @@
 /*   By: kdhrif <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 12:27:17 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/19 16:19:48 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/27 10:19:42 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_abs(int nbr)
+static int	ft_abs(int nbr)
 {
 	if (nbr < 0)
 		return (-nbr);
@@ -20,7 +20,7 @@ int	ft_abs(int nbr)
 		return (nbr);
 }
 
-void	ft_strrev(char *str)
+static void	ft_strrev(char *str)
 {
 	size_t	len;
 	size_t	i;
@@ -37,7 +37,7 @@ void	ft_strrev(char *str)
 	}
 }
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	i;
 

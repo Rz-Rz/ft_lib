@@ -6,13 +6,13 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 22:03:22 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/23 10:31:01 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/05/27 10:21:34 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_incharset(const char *set, char c)
+static int	ft_incharset(const char *set, char c)
 {
 	int	i;
 
