@@ -6,12 +6,13 @@
 #    By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 15:38:18 by kdhrif            #+#    #+#              #
-#    Updated: 2022/05/23 10:15:52 by kdhrif           ###   ########.fr        #
+#    Updated: 2022/06/07 15:46:14 by kdhrif           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT = libft.a
-
+TEST = libft.a
+HEADERS = libft.h
 CC = gcc -Wall -Wextra -Werror
 BONUS                   =       ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 				ft_lstdelone.c ft_lstiter.c ft_lstlast.c \
@@ -36,7 +37,7 @@ $(LIBFT) : $(OBJ)
 bonus: $(LIBFT) $(BONUS_OBJ)
 	ar rcs $(LIBFT) $(BONUS_OBJ)
 
-%.o:%.c
+%.o:%.c $(HEADERS) Makefile
 	$(CC) -c $< -o $@ 
 
 clean:

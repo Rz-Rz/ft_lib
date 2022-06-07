@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:18:11 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/05/19 12:24:12 by kdhrif           ###   ########.fr       */
+/*   Updated: 2022/06/07 15:45:19 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 // Define
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
+# define TEST -2147483648
 
 // Struct
 typedef struct s_list
