@@ -6,7 +6,7 @@
 /*   By: kdhrif <kdhrif@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 18:18:11 by kdhrif            #+#    #+#             */
-/*   Updated: 2022/06/07 15:45:19 by kdhrif           ###   ########.fr       */
+/*   Updated: 2023/01/07 09:52:54 by kdhrif           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t size);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+
+int					ft_strcmp(const char *s1, const char *s2);
 
 char				*ft_strnstr(const char *big, const char *little,
 						size_t len);
